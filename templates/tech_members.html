@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Tech Team Section -->
+    <section class="bg-porcelain py-16" id="tech_team">
+        <div class="container mx-auto px-4">
+            <!-- Tech Team Header -->
+            <h2 class="text-3xl font-bold text-center text-firefly mb-4">Tech Team</h2>
+            <p class="text-center text-gray-700 mb-12">
+                Meet the tech experts driving our organization's technological advancements.
+            </p>
+
+            <!-- Tech Team Members Grid -->
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Team Member 1: Abhi Dinesh -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/abhi.jpg') }}" alt="Abhi Dinesh" class="rounded-full w-32 h-32 mx-auto object-cover mt-4">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Abhi Dinesh</h3>
+                        <p class="text-gray-600">VP of Technology</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> (949) 575-0084</p>
+                            <p class="text-gray-700">
+                                <strong>Email:</strong> 
+                                <a href="mailto:abhidine@iu.edu" class="text-blue-600 hover:underline">abhidine@iu.edu</a>
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <!-- LinkedIn Icon -->
+                                <a href="https://www.linkedin.com/in/abhinav-dinesh37/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Abhi Dinesh's LinkedIn Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:abhidine@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Abhi Dinesh">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Noah Bakken -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/noah.png') }}" alt="Noah Bakken" class="rounded-full w-32 h-32 mx-auto object-cover mt-4">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Noah Bakken</h3>
+                        <p class="text-gray-600">Director of Tech</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> (508) 654-610</p>
+                            <p class="text-gray-700">
+                                <strong>Email:</strong> 
+                                <a href="mailto:nbakken@iu.edu" class="text-blue-600 hover:underline">nbakken@iu.edu</a>
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <!-- LinkedIn Icon -->
+                                <a href="https://www.linkedin.com/in/noah-bakken" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Noah Bakken's LinkedIn Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:nbakken@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Noah Bakken">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Pranav Vangari -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/pranav.v.jpg') }}" alt="Pranav Vangari" class="rounded-full w-32 h-32 mx-auto object-cover mt-4">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Pranav Vangari</h3>
+                        <p class="text-gray-600">Director of Tech</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> (847) 262-1488</p>
+                            <p class="text-gray-700">
+                                <strong>Email:</strong> 
+                                <a href="mailto:prvang@iu.edu" class="text-blue-600 hover:underline">prvang@iu.edu</a>
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <!-- LinkedIn Icon -->
+                                <a href="https://www.linkedin.com/in/pranavvangari/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Pranav Vangari's LinkedIn Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:prvang@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Pranav Vangari">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more team members as needed following the same structure -->
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="bg-white py-16" id="what_we_do">
+        <div class="container mx-auto px-4">
+            <!-- What We Do Header -->
+            <h2 class="text-3xl font-bold text-center text-firefly mb-4">What We Do</h2>
+            <h3 class="text-center text-gray-700 mb-12">We created this website from scratch!</h3>
+
+            <!-- What We Do Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Implementing Advanced Technology -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <div class="p-6">
+                        <br>
+                        <h3 class="text-2xl font-semibold text-firefly mb-4">Implementing Advanced Technology</h3>
+                        <p class="text-gray-700">
+                            We spearhead the adoption of cutting-edge technology solutions to propel LCA's growth. By managing essential tools like Notion, Slack, LinkTree, and Canva, we ensure seamless integration and optimal operational efficiency.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2: Optimizing Infrastructure -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <div class="p-6">
+                        <br>
+                        <h3 class="text-2xl font-semibold text-firefly mb-4">Optimizing Infrastructure</h3>
+                        <p class="text-gray-700">
+                            Our team excels in technology strategy and infrastructure management, maintaining a robust digital ecosystem. We ensure all systems function smoothly, supporting LCA's objectives and fostering a productive work environment.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3: Driving Innovation through Projects -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <div class="p-6">
+                        <br>
+                        <h3 class="text-2xl font-semibold text-firefly mb-4">Driving Innovation through Projects</h3>
+                        <p class="text-gray-700">
+                            We lead diverse technical projects that align with our organization's goals. By leveraging our expertise, we foster innovation, drive continuous improvement, and ensure the successful achievement of LCA's mission.
+                        </p>
+                    </div>
+                </div>
+                <!-- Add more What We Do cards as needed following the same structure -->
+            </div>
+        </div>
+    </section>
+{% endblock %}

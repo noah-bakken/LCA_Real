@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LCA</title>
+    <!-- Viewport Meta Tag for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN for Social Media Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Your Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body class="font-DMSans">
+    <!-- Navbar -->
+<nav class="navbar navbar-dark bg-firefly fixed-top navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand align-top" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" style="height: 60px;">
+        </a>
+
+        <!-- Navbar Toggler (for mobile view) -->
+        <button class="navbar-toggler" type="button" id="navbar-toggler" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links (visible on desktop) -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <!-- About Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link text-firefly" href="{{ url_for('about_us') }}">About Us</a>
+                </li>
+
+                <!-- Events Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-firefly" href="#" id="navbarDropdownEvents" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Events
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownEvents">
+                        <li><a class="dropdown-item" href="{{ url_for('events_page') }}">All Events</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('workshops_page') }}">Workshops</a></li>
+                    </ul>
+                </li>
+
+                <!-- Members Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-firefly" href="#" id="navbarDropdownMembers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Members
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                        <li><a class="dropdown-item" href="{{ url_for('exec_members') }}">Leadership Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('tech_members') }}">Tech Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('marketing_members') }}">Marketing Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('digital_solutions_members') }}">Digital Solutions Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('tech_consulting_members') }}">Tech Consultant Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('external_relations_members') }}">External Relations Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('finance_members') }}">Finance Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('intern_members') }}">Intern Team</a></li>
+                    </ul>
+                </li>
+
+                <!-- Contact Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link text-firefly" href="{{ url_for('contact') }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sidebar for Mobile Navigation -->
+    <div id="sidebar" class="sidebar">
+        <!-- Close Button -->
+        <a href="javascript:void(0)" class="closebtn" id="close-sidebar">&times;</a>
+        <!-- Sidebar Links -->
+        <a href="{{ url_for('about_us') }}">About Us</a>
+        <a href="{{ url_for('events_page') }}">All Events</a>
+        <a href="{{ url_for('workshops_page') }}">Workshops</a>
+        <a href="{{ url_for('exec_members') }}">Exec Members</a>
+        <a href="{{ url_for('contact') }}">Contact Us</a>
+    </div>
+
+    <!-- git config --global user.name "noah-bakken"
+git config --global user.email "noahbakken477@gmail.com" -->
+
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Your Page Content -->
+    <div class="pt-20"> <!-- To prevent content being hidden behind the fixed navbar -->
+        {% block content %}
+        <!-- Your existing content goes here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-firefly text-porcelain py-8">
+        <!-- Contact Us Section -->
+        <section class="bg-firefly py-5" id="contact">
+            <div class="container">
+                <h2 class="fw-bold text-center text-porcelain">Contact Us!</h2>
+                <p class="mt-4 text-center text-porcelain">
+                    Join our email list to get information about events!
+                </p>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-6">
+                        <form action="{{ url_for('subscribe') }}" method="post" class="bg-white p-4 shadow-sm rounded">
+                            <div class="mb-3">
+                                <label for="email" class="form-check-label">Email*</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="subscribe" name="subscribe" required>
+                                <label class="form-check-label" for="subscribe">Yes, subscribe me to your email list.</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Social Media Links and Copyright -->
+        <div class="container mx-auto text-center">
+            <div class="d-flex justify-content-center mb-4">
+                <!-- BeInvolved Icon -->
+                <a href="https://beinvolved.indiana.edu/organization/luddyconsultingassociation" class="hover:text-verdigris me-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-user-friends fa-lg icon-beinvolved"></i>
+                </a>
+                <!-- Slack Icon -->
+                <a href="https://luddyconsulting.slack.com/join/shared_invite/..." class="hover:text-verdigris me-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-slack fa-lg icon-slack"></i>
+                </a>
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/company/luddy-consulting-association/posts/..." class="hover:text-verdigris me-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin fa-lg icon-linkedin"></i>
+                </a>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/luddyconsultingassociation/?hl=en" class="hover:text-verdigris me-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram fa-lg icon-instagram"></i>
+                </a>
+            </div>
+            <br>
+            <p class="text-sm">
+                &copy; {{ current_year }} Luddy Consulting Association. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your Custom JavaScript (if any) -->
+    <script>
+        // Custom JavaScript for Sidebar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.getElementById('navbar-toggler');
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebarBtn = document.getElementById('close-sidebar');
+            const overlay = document.getElementById('overlay');
+            const body = document.body;
+
+            // Function to open the sidebar
+            function openSidebar() {
+                sidebar.classList.add('open');
+                overlay.classList.add('active');
+                body.classList.add('sidebar-open');
+                navbarToggler.setAttribute('aria-expanded', 'true');
+            }
+
+            // Function to close the sidebar
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                body.classList.remove('sidebar-open');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+
+            // Toggle the sidebar when the navbar toggler is clicked
+            navbarToggler.addEventListener('click', function() {
+                if (sidebar.classList.contains('open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+
+            // Close the sidebar when the close button is clicked
+            closeSidebarBtn.addEventListener('click', closeSidebar);
+
+            // Close the sidebar when clicking on the overlay
+            overlay.addEventListener('click', closeSidebar);
+
+            // Close the sidebar when a link inside it is clicked
+            const sidebarLinks = sidebar.querySelectorAll('a');
+            sidebarLinks.forEach(function(link) {
+                link.addEventListener('click', closeSidebar);
+            });
+        });
+    </script>
+</body>
+</html>

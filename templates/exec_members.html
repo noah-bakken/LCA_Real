@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Custom CSS for Executive Board Background -->
+<style>
+    .executive-board-bg {
+        background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative; /* Establishes a positioning context for overlays */
+    }
+
+    /* Optional: Add an overlay to enhance text readability */
+    .executive-board-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(3, 38, 58, 0.5); /* Adjust color and opacity as needed */
+        z-index: 0; /* Places the overlay behind the content */
+    }
+
+    /* Ensure content sits above the overlay */
+    .executive-board-content {
+        position: relative;
+        z-index: 1; /* Places content above the overlay */
+    }
+</style>
+
+<section class="executive-board-bg bg-porcelain py-16" id="executive-board">
+    <div class="container mx-auto px-4 executive-board-content">
+        <!-- Executive Board Header -->
+        <h2 class="text-3xl font-bold text-center text-firefly mb-8">Executive Board</h2>
+        <p class="text-center text-gray-700 mb-12">Meet the leaders driving our organization forward.</p>
+
+        <!-- Executive Members Grid -->
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Sehoon Park -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/sehoon.jpg') }}" alt="Sehoon Park" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Sehoon Park</h3>
+                    <p class="text-gray-600">Co-President</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 910-753-4173</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:sehpark@iu.edu" class="text-blue-600 hover:underline">sehpark@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/sehpark/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Sehoon Park's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:sehpark@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Sehoon Park">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emily McGough -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/emily.png') }}" alt="Emily McGough" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Emily McGough</h3>
+                    <p class="text-gray-600">Co-President</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 716-359-2909</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:emcgough@iu.edu" class="text-blue-600 hover:underline">emcgough@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/emilymcgough1/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Emily McGough's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:emcgough@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Emily McGough">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abhinav Dinesh -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/abhi.jpg') }}" alt="Abhinav Dinesh" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Abhinav Dinesh</h3>
+                    <p class="text-gray-600">VP of Technology</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 949-575-0084</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:abhidine@iu.edu" class="text-blue-600 hover:underline">abhidine@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/abhinav-dinesh37/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Abhinav Dinesh's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:abhidine@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Abhinav Dinesh">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mahimasree Chandravadhana Seethapathy -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/mahima.jpg') }}" alt="Mahimasree Chandravadhana Seethapathy" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Mahimasree C. S.</h3>
+                    <p class="text-gray-600">VP of Marketing</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 812-822-7060</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:mahichan@iu.edu" class="text-blue-600 hover:underline">mahichan@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/mahimasreecs/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Mahimasree Chandravadhana Seethapathy's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:mahichan@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Mahimasree Chandravadhana Seethapathy">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teresa Yu -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/teresa.png') }}" alt="Teresa Yu" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Teresa Yu</h3>
+                    <p class="text-gray-600">VP of External Relations</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 317-523-9732</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:yute@iu.edu" class="text-blue-600 hover:underline">yute@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/teresayu-kbs/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Teresa Yu's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:yute@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Teresa Yu">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Praanav Arora -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/pranav_arora.png') }}" alt="Praanav Arora" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Praanav Arora</h3>
+                    <p class="text-gray-600">VP of Finance</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> (+) 99 98103 50846</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:arorapra@iu.edu" class="text-blue-600 hover:underline">arorapra@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/praanav-arora/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Praanav Arora's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:arorapra@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Praanav Arora">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Joseph Concialdi -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/joseph.png') }}" alt="Joseph Concialdi" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Joseph Concialdi</h3>
+                    <p class="text-gray-600">Project Manager for Intern Team</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 847-975-6217</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:jconcial@iu.edu" class="text-blue-600 hover:underline">jconcial@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/joseph-concialdi/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Joseph Concialdi's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:jconcial@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Joseph Concialdi">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bill Hoang -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/bill_hoang.jpg') }}" alt="Bill Hoang" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Bill Hoang</h3>
+                    <p class="text-gray-600">Project Manager for Digital Solutions</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 510-999-0966</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:hoangb@iu.edu" class="text-blue-600 hover:underline">hoangb@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/billhoangmq/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Bill Hoang's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:hoangb@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Bill Hoang">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Joy Lin -->
+            <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                <img src="{{ url_for('static', filename='images/headshots/joy.png') }}" alt="Joy Lin" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-semibold text-firefly">Joy Lin</h3>
+                    <p class="text-gray-600">Digital Solutions Project Manager</p>
+                    <!-- Contact Information -->
+                    <div class="mt-4 space-y-2">
+                        <p class="text-gray-700"><strong>Phone:</strong> 917-826-9905</p>
+                        <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:linjoy@iu.edu" class="text-blue-600 hover:underline">linjoy@iu.edu</a></p>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="https://www.linkedin.com/in/joy-lin-zi/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Joy Lin's LinkedIn Profile">
+                                <!-- LinkedIn Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon -->
+                            <a href="mailto:linjoy@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Joy Lin">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+{% endblock %}

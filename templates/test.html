@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}3D Model Viewer{% endblock %}
+
+{% block content %}
+<h3 class="text-center">Explore Our 3D Model</h3>
+<div id="model-container" style="width: 100%; height: 400px; border: 1px solid #ddd;"></div>
+
+<!-- Include Three.js and OrbitControls -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/OBJLoader.js"></script>
+
+<script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    const modelContainer = document.getElementById('model-container');
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(modelContainer.clientWidth, modelContainer.clientHeight);
+    modelContainer.appendChild(renderer.domElement);
+
+    renderer.setClearColor(0xffffff, 1);
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(0, 1, 1).normalize();
+    scene.add(light);
+
+    let obj;
+    const loader = new THREE.OBJLoader();
+    loader.load(
+        '{{ url_for('static', filename='model/base.obj') }}',  // Flask URL for the model
+        function (object) {
+            console.log("Model Loaded Successfully");
+            obj = object;
+            scene.add(obj);
+            obj.position.set(0, 0, 0);
+            obj.scale.set(1, 1, 1);
+            camera.position.z = 5;
+        },
+        undefined,
+        function (error) {
+            console.error("Error loading model:", error);
+        }
+    );
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        if (obj) {
+            obj.rotation.y += 0.01;
+        }
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+</script>
+{% endblock %}

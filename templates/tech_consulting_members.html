@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+    <!-- Tech Consulting Team Section -->
+    <section class="bg-porcelain py-16" id="tech-consulting-team">
+        <div class="container mx-auto px-4">
+            <!-- Tech Consulting Team Header -->
+            <h2 class="text-3xl font-bold text-center text-firefly mb-8">Tech Consulting Team</h2>
+
+            <!-- Tech Consulting Members Grid -->
+            <div class="flex flex-wrap justify-center gap-8">
+
+                <!-- Joy Lin -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/joy.png') }}" alt="Joy Lin" class="rounded-full w-32 h-32 mx-auto object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Joy Lin</h3>
+                        <p class="text-gray-600">PM for Tech Consulting</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> 917-826-9905</p>
+                            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:linjoy@iu.edu" class="text-blue-600 hover:underline">linjoy@iu.edu</a></p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="https://www.linkedin.com/in/joy-lin-zi/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Joy Lin's LinkedIn Profile">
+                                    <!-- LinkedIn Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:linjoy@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Joy Lin">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rohan Chandorkar -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/rohan.png') }}" alt="Rohan Chandorkar" class="rounded-full w-32 h-32 mx-auto object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Rohan Chandorkar</h3>
+                        <p class="text-gray-600">Consultant</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> 609-955-4038</p>
+                            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:rchando@iu.edu" class="text-blue-600 hover:underline">rchando@iu.edu</a></p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="https://www.linkedin.com/in/rohanchandorkar/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Rohan Chandorkar's LinkedIn Profile">
+                                    <!-- LinkedIn Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:rchando@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Rohan Chandorkar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tanisha Chandrasekaran -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/tanisha.png') }}" alt="Tanisha Chandrasekaran" class="rounded-full w-32 h-32 mx-auto object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Tanisha Chandrasekaran</h3>
+                        <p class="text-gray-600">Consultant</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> 812-679-3321</p>
+                            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:tchandr@iu.edu" class="text-blue-600 hover:underline">tchandr@iu.edu</a></p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="https://www.linkedin.com/in/tanishachandrasekaran/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Tanisha Chandrasekaran's LinkedIn Profile">
+                                    <!-- LinkedIn Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:tchandr@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Tanisha Chandrasekaran">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sankalpa Hegde -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/sankalpa.png') }}" alt="Sankalpa Hegde" class="rounded-full w-32 h-32 mx-auto object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Sankalpa Hegde</h3>
+                        <p class="text-gray-600">Consultant</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> 347-684-3677</p>
+                            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:sahegde@iu.edu" class="text-blue-600 hover:underline">sahegde@iu.edu</a></p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="https://www.linkedin.com/in/sankalpa-hegde/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Sankalpa Hegde's LinkedIn Profile">
+                                    <!-- LinkedIn Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:sahegde@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Sankalpa Hegde">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radhika Jindal -->
+                <div class="team-member bg-white shadow-lg rounded-lg overflow-hidden w-80">
+                    <img src="{{ url_for('static', filename='images/headshots/radhika.png') }}" alt="Radhika Jindal" class="rounded-full w-32 h-32 mx-auto object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-firefly">Radhika Jindal</h3>
+                        <p class="text-gray-600">Consultant</p>
+                        <!-- Contact Information -->
+                        <div class="mt-4 space-y-2">
+                            <p class="text-gray-700"><strong>Phone:</strong> 812-606-4227</p>
+                            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:rajindal@iu.edu" class="text-blue-600 hover:underline">rajindal@iu.edu</a></p>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="https://www.linkedin.com/in/jindalradhika/" target="_blank" class="text-blue-700 hover:text-blue-900" aria-label="Radhika Jindal's LinkedIn Profile">
+                                    <!-- LinkedIn Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.218c.897-1.394 3-1.872 3 1.218v7.5z"/>
+                                    </svg>
+                                </a>
+                                <!-- Envelope Icon -->
+                                <a href="mailto:rajindal@iu.edu" class="text-gray-700 hover:text-gray-900" aria-label="Send Email to Radhika Jindal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="envelope-icon w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8l-9 6-9-6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!-- templates/footer.html -->
+<footer class="bg-firefly text-porcelain py-8">
+    <!-- Contact Us Section -->
+    <section class="bg-firefly py-5" id="contact">
+        <div class="container">
+            <h2 class="fw-bold text-center text-porcelain">Contact Us!</h2>
+            <p class="mt-4 text-center text-porcelain">
+                Join our email list to get information about events!
+            </p>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <form action="{{ url_for('subscribe') }}" method="post" class="bg-white p-4 shadow-sm rounded">
+                        <div class="mb-3">
+                            <label for="email" class="form-check-label">Email*</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="subscribe" name="subscribe" required>
+                            <label class="form-check-label" for="subscribe">Yes, subscribe me to your email list.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Social Media Links and Copyright -->
+    <!-- Social Media Links and Copyright -->
+<div class="container mx-auto text-center">
+    <div class="flex justify-center space-x-6 mb-4">
+        <!-- BeInvolved Icon -->
+        <a href="https://beinvolved.indiana.edu/organization/luddyconsultingassociation" class="hover:text-verdigris flex items-center space-x-2" target="_blank">
+            <i class="fas fa-user-friends fa-lg icon-beinvolved"></i>
+        </a>
+        <!-- Slack Icon -->
+        <a href="https://luddyconsulting.slack.com/join/shared_invite/..." class="hover:text-verdigris flex items-center space-x-2" target="_blank">
+            <i class="fab fa-slack fa-lg icon-slack"></i>
+        </a>
+        <!-- LinkedIn Icon -->
+        <a href="https://www.linkedin.com/company/luddy-consulting-association/posts/..." class="hover:text-verdigris flex items-center space-x-2" target="_blank">
+            <i class="fab fa-linkedin fa-lg icon-linkedin"></i>
+        </a>
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/luddyconsultingassociation/?hl=en" class="hover:text-verdigris flex items-center space-x-2" target="_blank">
+            <i class="fab fa-instagram fa-lg icon-instagram"></i>
+        </a>
+    </div>
+    <br>
+    <p class="text-sm">
+        &copy; {{ current_year }} Luddy Consulting Association. All rights reserved.
+    </p>
+</div>
+
+
+    </div>
+</footer>

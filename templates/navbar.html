@@ -1,0 +1,120 @@
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-firefly fixed-top navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand align-top" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" style="height: 60px;">
+        </a>
+
+        <!-- Navbar Toggler (for mobile view) -->
+        <button class="navbar-toggler" type="button" id="navbar-toggler" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links (visible on desktop) -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <!-- About Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link text-firefly" href="{{ url_for('about_us') }}">About Us</a>
+                </li>
+
+                <!-- Events Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-firefly" href="#" id="navbarDropdownEvents" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Events
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownEvents">
+                        <li><a class="dropdown-item" href="{{ url_for('events_page') }}">All Events</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('workshops_page') }}">Workshops</a></li>
+                    </ul>
+                </li>
+
+                <!-- Members Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-firefly" href="#" id="navbarDropdownMembers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Members
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                        <li><a class="dropdown-item" href="{{ url_for('exec_members') }}">Leadership Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('tech_members') }}">Tech Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('marketing_members') }}">Marketing Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('consulting_members') }}">Consulting Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('finance_members') }}">Finance Team</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('digital_solutions_members') }}">Digital Solutions Team</a></li>
+                    </ul>
+                </li>
+
+                <!-- Contact Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link text-firefly" href="{{ url_for('contact') }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  
+  <!-- Sidebar for Mobile Navigation -->
+  <div id="sidebar" class="sidebar">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="closebtn" id="close-sidebar">&times;</a>
+    <!-- Sidebar Links -->
+    <a href="{{ url_for('about_us') }}">About Us</a>
+    <a href="{{ url_for('events_page') }}">All Events</a>
+    <a href="{{ url_for('workshops_page') }}">Workshops</a>
+    <a href="{{ url_for('exec_members') }}">Members</a>
+    <a href="{{ url_for('contact') }}">Contact Us</a>
+  </div>
+  
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+  
+  <!-- JavaScript Code -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbarToggler = document.getElementById('navbar-toggler');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebarBtn = document.getElementById('close-sidebar');
+        const overlay = document.getElementById('overlay');
+        const body = document.body;
+  
+        // Function to open the sidebar
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            body.classList.add('sidebar-open');
+            navbarToggler.setAttribute('aria-expanded', 'true');
+        }
+  
+        // Function to close the sidebar
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            body.classList.remove('sidebar-open');
+            navbarToggler.setAttribute('aria-expanded', 'false');
+        }
+  
+        // Toggle the sidebar when the navbar toggler is clicked
+        navbarToggler.addEventListener('click', function() {
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+  
+        // Close the sidebar when the close button is clicked
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+  
+        // Close the sidebar when clicking on the overlay
+        overlay.addEventListener('click', closeSidebar);
+  
+        // Close the sidebar when a link inside it is clicked
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(function(link) {
+            link.addEventListener('click', closeSidebar);
+        });
+    });
+  </script>
+  

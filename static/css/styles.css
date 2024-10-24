@@ -1,0 +1,613 @@
+/* =====================================================
+   1. Reset and Base Styles
+===================================================== */
+
+/* Box-sizing Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove Default Margin and Padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a Base Line-height and Font-family */
+body {
+    line-height: 1.5;
+    font-family: 'DMSans', sans-serif; /* Secondary Font */
+}
+
+/* Remove List Styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove Link Underlines */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================================
+   2. Custom Fonts
+===================================================== */
+
+/* Primary Font - SackersHeavyGothic */
+@font-face {
+    font-family: 'SackersHeavyGothic';
+    src: url('../fonts/sackers-heavy-gothic.ttf') format('truetype'); /* Update with the correct path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Secondary Font - DM Sans */
+@font-face {
+    font-family: 'DMSans';
+    src: url('../fonts/dmnormal.ttf') format('truetype'); /* Update with the correct path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply Primary Font to titles and important headers */
+h1, h2, h3, h4, h5, h6,
+.navbar-brand, .navbar,
+.fw-bold,
+.font-weight-bold {
+    font-family: 'SackersHeavyGothic', sans-serif;
+}
+
+/* =====================================================
+   3. Custom Colors
+===================================================== */
+
+.bg-firefly {
+    background-color: #03263A; /* Dark blue */
+}
+
+.text-porcelain {
+    color: #F2F2F2; /* Light grayish white */
+}
+
+.text-verdigris {
+    color: #43B7B0; /* Verdigris */
+}
+
+.text-firefly {
+    color: #03263A; /* Firefly color */
+}
+
+.text-custom12 {
+    /* Define your custom text color or styles here */
+    color: #333333; /* Example: dark gray */
+    line-height: 1.6;
+}
+
+/* =====================================================
+   4. Navbar Styling
+===================================================== */
+
+/* Navbar Dark Theme Links */
+.navbar-dark .navbar-nav .nav-link {
+    color: #F2F2F2; /* Porcelain text color */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #43B7B0; /* Verdigris on hover */
+}
+
+.navbar-dark .navbar-brand {
+    color: #F2F2F2;
+}
+
+.navbar-toggler {
+    border-color: rgba(242, 242, 242, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242, 242, 242, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Adjust the navbar height to match the logo */
+.navbar {
+    min-height: 60px; /* Adjust to match or exceed your logo's height */
+    padding: 0;
+    z-index: 1030; /* Ensure it's above other elements */
+}
+
+/* Custom alignment for navbar-brand */
+.navbar-brand.align-top {
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+}
+
+/* Remove any default padding or margins from the navbar-brand image */
+.navbar-brand.align-top img {
+    padding: 0;
+    margin: 0;
+}
+
+/* Fix for the navbar to align the toggler to the right on mobile */
+.navbar .container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Desktop Navbar Styles */
+@media (min-width: 992px) {
+    /* Ensure Navbar Items are Displayed Horizontally */
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    /* Optional: Adjust spacing between nav items */
+    .navbar-nav .nav-item {
+        margin-left: 1rem;
+    }
+
+    /* Ensure the navbar toggler is hidden on desktop */
+    .navbar-toggler {
+        display: none;
+    }
+
+    /* Dropdown Menu Adjustments */
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+}
+
+/* Mobile Navbar Styles */
+@media (max-width: 991.98px) {
+    /* Hide the navbar links */
+    .navbar-collapse {
+        display: none;
+    }
+
+    /* Dropdown Menu Adjustments */
+    .navbar-nav .dropdown-menu {
+        background-color: #03263A; /* Firefly background */
+    }
+
+    .navbar-nav .dropdown-item {
+        color: #F2F2F2; /* Porcelain text */
+    }
+
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+        color: #43B7B0; /* Verdigris on hover */
+        background-color: rgba(67, 183, 176, 0.1); /* Light Verdigris background on hover */
+    }
+
+    /* Ensure Navbar Items are Displayed Vertically */
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 0;
+    }
+}
+
+/* =====================================================
+   5. Sidebar Styling
+===================================================== */
+
+.sidebar {
+    height: 100%; /* Full-height */
+    width: 0; /* Initially hidden */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* On top */
+    top: 0;
+    left: 0;
+    background-color: #03263A; /* Firefly background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: width 0.5s ease; /* Smooth transition */
+    padding-top: 60px; /* Place content 60px from the top */
+}
+
+.sidebar.open {
+    width: 250px; /* Set desired width for sidebar */
+}
+
+/* Links inside the sidebar */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F2F2F2; /* Porcelain text */
+    display: block;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+/* Links hover effect */
+.sidebar a:hover {
+    color: #43B7B0; /* Verdigris on hover */
+}
+
+/* Close Button Styling */
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #F2F2F2;
+    cursor: pointer;
+}
+
+/* Overlay Styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1040; /* Below the sidebar */
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent background scrolling when sidebar is open */
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* =====================================================
+   6. Button Styling
+===================================================== */
+.btn-primary {
+    background-color: #43B7B0; /* Verdigris */
+    border-color: #43B7B0; /* Match the border to the background */
+    color: #fff; /* Text color */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: #43B7B0; /* Same background color on hover, focus, active, and visited */
+    border-color: #43B7B0; /* Same border color on hover, focus, active, and visited */
+    color: #fff; /* Ensure text color remains the same */
+    box-shadow: none; /* Remove any potential shadow on active */
+}
+
+.btn-primary:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.btn-custom {
+    background-color: #43B7B0; /* Verdigris */
+    color: #03263A; /* Firefly */
+    padding: 0.75rem 1rem;
+    border-radius: 50px; /* Fully rounded */
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: #379E99; /* Darker Verdigris */
+}
+
+.btn-linkedin {
+    background-color: #0077B5; /* LinkedIn blue */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-linkedin:hover {
+    background-color: #005983; /* Darker LinkedIn blue on hover */
+}
+
+/* =====================================================
+   7. General Section Styling
+===================================================== */
+
+section {
+    padding: 2rem 0;  /* Control padding between sections */
+    margin-top: 4rem;
+}
+
+.custom-padding {
+    padding-top: 0rem !important;
+}
+
+/* Disable horizontal scrolling */
+html, body {
+    overflow-x: hidden;  /* Prevents horizontal scrolling */
+    width: 100%;         /* Ensures the body doesn't exceed the viewport width */
+}
+
+/* =====================================================
+   8. Carousel Styling
+===================================================== */
+
+#galleryCarousel {
+    width: 100%;
+    max-width: 100%; /* Ensure the carousel doesn't exceed its container width */
+    margin: 0 auto; /* Center the carousel if needed */
+}
+
+/* Ensure carousel inner and items fill the carousel */
+#galleryCarousel .carousel-inner,
+#galleryCarousel .carousel-item {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Style the images within the carousel */
+#galleryCarousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Set a max height as needed */
+    object-fit: contain; /* Changed from cover to contain to prevent zooming in */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    #galleryCarousel .carousel-item img {
+        max-height: 300px; /* Adjust max height for smaller screens */
+    }
+}
+
+/* =====================================================
+   9. Circle Logo Styling
+===================================================== */
+
+.circle-logo {
+    width: 120px;  /* Set a fixed width for the logos */
+    height: 120px; /* Set a fixed height for the logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center the circle */
+}
+
+.circle-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the logo fits within the circle without distortion */
+}
+
+/* =====================================================
+   11. Flexbox for Wrapping
+===================================================== */
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* Adjust as needed */
+}
+
+/* =====================================================
+   10. Team Member Cards
+===================================================== */
+
+.team-member {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px; /* Fixed width */
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem; /* Space below the image */
+    border-radius: 0;
+}
+
+.team-member h3 {
+    margin: 1rem 0 0.25rem 0;
+    font-size: 1.5rem;
+    color: #03263A;
+}
+
+.team-member p {
+    color: #6B7280;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .p-6 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.team-member .mt-4 {
+    margin-top: 0.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member .mt-4 p {
+    margin-bottom: 0.5rem;
+}
+
+.team-member .flex {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-member .flex a {
+    margin: 0 0.5rem;
+}
+
+/* Adjust icons size and color */
+.linkedin-icon,
+.envelope-icon {
+    width: 24px;
+    height: 24px;
+    color: #6B7280;
+}
+
+.linkedin-icon:hover,
+.envelope-icon:hover {
+    color: #03263A;
+}
+
+
+
+/* =====================================================
+   12. Responsive Layout Adjustments for Smaller Screens
+===================================================== */
+
+@media (max-width: 767.98px) {
+    .team-member {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    /* Adjust section padding to remove white space between specific sections */
+    #hero-section {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #upcoming-events {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+/* =====================================================
+   13. Utility Classes for Padding and Margin
+===================================================== */
+
+/* Padding Top 5 (Equivalent to .pt-5) */
+.pt-5 {
+    padding-top: 3rem; /* Adjust as needed */
+    /* To make padding negative, use negative margin instead */
+    margin-top: -1rem; /* Pulls the element upwards to eliminate white space */
+}
+
+/* Padding Y-axis 5 (Equivalent to .py-5) */
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* =====================================================
+   14. Additional Styles
+===================================================== */
+
+/* Horizontal Divider */
+.divider {
+    width: 10%;
+    height: 1px;
+    background-color: white;
+    margin: 1px auto;
+}
+
+/* About Us Text Customization */
+#about-us .text-custom12 {
+    /* Define any specific styles needed */
+    color: #333333; /* Example: dark gray */
+    line-height: 1.6;
+}
+
+/* Card Image Customization */
+.event-image {
+    object-fit: contain; /* Changed from cover to contain to prevent zooming in */
+    height: auto; /* Remove fixed height to maintain original aspect ratio */
+    width: 100%; /* Ensure full width */
+}
+
+/* Ensuring Cards Stretch Equally */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optional: Read More Button */
+.btn-read-more {
+    margin-top: auto;
+}
+
+/* =====================================================
+   15. Custom Classes for Upcoming Events Section
+===================================================== */
+
+/* Custom Card Height */
+.custom-card-height {
+    max-width: 350px; /* Adjust as needed */
+    height: auto; /* Let the content define the height */
+}
+
+/* Custom Card Title */
+.custom-card-title {
+    font-size: 1.2rem; /* Adjust as needed */
+}
+
+/* Custom Card Text */
+.custom-card-text {
+    font-size: 1rem; /* Adjust as needed */
+}
+
+/* =====================================================
+   16. Hero Section Styling
+===================================================== */
+
+#hero-section {
+    background-image: url('../images/luddy.png'); /* Correct relative path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensures the section has enough height */
+    background-color: #03263A !important; /* Fallback color */
+    position: relative; /* Ensure positioning context */
+    display: flex;
+    align-items: center; /* Vertically center content */
+}
+
+/* Overlay for better text readability */
+#hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 38, 58, 0.5); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+#hero-section .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+

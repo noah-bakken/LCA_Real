@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Luddy Consulting Association{% endblock %}
+{% block content %}
+
+
+<!-- Workshops Section -->
+<section class="bg-firefly text-porcelain py-5" id="workshops">
+    <div class="container">
+        <h2 class="fw-bold text-center">Workshops + Consulting</h2>
+        <div class="row mt-4">
+            {% for workshop in workshops %}
+            <div class="col-md-6">
+                <div class="card mb-4 bg-porcelain text-firefly shadow-sm">
+                    <img src="{{ url_for('static', filename=workshop.image) }}" alt="{{ workshop.title }}" class="card-img-top event-image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ workshop.title }}</h5>
+                        <p class="card-text">{{ workshop.description }}</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<br>
+
+
+
+{% endblock %}

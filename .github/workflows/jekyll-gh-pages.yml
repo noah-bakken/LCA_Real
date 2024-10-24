@@ -24,14 +24,13 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1.6'  # Updated Ruby version to a specific version
+          ruby-version: '3.1.6'
           bundler-cache: true
 
       - name: Install dependencies
         run: |
-          cd <subdirectory>  # e.g., cd docs if your Gemfile is in a docs folder
+          cd docs  # Change this to the correct subdirectory if your Gemfile isn't in the root
           bundle install
-
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

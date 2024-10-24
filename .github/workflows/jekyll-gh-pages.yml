@@ -29,7 +29,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd <subdirectory>  # e.g., cd docs if your Gemfile is in a docs folder
           bundle install
+
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
